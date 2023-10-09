@@ -1,0 +1,30 @@
+<!-- autor: Lucas Sepriano -->
+<script>
+    function appData() {
+        return {
+            ra: "", // Variável que armazenará o RA do aluno.
+            nome: "", // Variável que armazenará o nome do aluno.
+            disciplinas: [], // Array que armazenará as disciplinas cursadas pelo aluno.
+
+            // Função que será executada quando o componente Alpine.js for inicializado.
+            loadData() {
+                // Faz uma requisição AJAX para obter os dados JSON do servidor.
+                fetch('lucassepriano.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            // Atualiza as variáveis 'ra', 'nome' e 'disciplinas' com os dados obtidos.
+                            this.ra = data.RA;
+                            this.nome = data.Nome;
+                            // Mapeia as disciplinas para o formato adequado.
+                            this.disciplinas = data.DisciplinasCursadas.map(disciplina => {
+                                return {
+                                    Codigo: disciplina.Codigo,
+                                    Nome: disciplina.Nome
+                                };
+                            });
+                        })
+                        .catch(error => console.error('Erro:', error));
+            }
+        };
+    }
+</script>

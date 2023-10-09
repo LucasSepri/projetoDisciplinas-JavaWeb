@@ -1,0 +1,8 @@
+<!-- autor: Lucas Sepriano -->
+<div id="header" class="bg-primary text-white px-5 py-2">
+    <h1 class="mb-0 text-white">Minha Aplicação</h1>
+    <ul class="menu list-unstyled d-flex">
+        <li class="me-3"><a href="index.jsp" class="text-white text-decoration-none">Página Inicial</a></li>
+        <li><a href="disciplinas.jsp" class="text-white text-decoration-none">Disciplinas Cursadas</a></li>
+    </ul>
+</div>
